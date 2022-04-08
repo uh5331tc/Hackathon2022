@@ -26,8 +26,6 @@
 
         <div class="col-md-9">
      
-
-
         <div class="finacialInterval">
             <label for="finacialInterval">Financial Interval</label> <!--DROP DOWN MENU lable-->
             <select id="finacialInterval" style="background-color: rgb(194, 136, 241); border: 3px solid #c203fc;">
@@ -55,7 +53,7 @@
 
                 <label for="name">Slide to adjust monthly Income</label > <!--Income lable-->
                     <div class="slidecontainer">
-                        <input type="range" min="100" max="10000" value="5000" class="slider" id="myRangeIncome">
+                        <input type="range" min="100" max="5000" value="3000" class="slider" id="myRangeIncome">
                     <span id="demoIncome"></span>
                     </div>
         <br>    
@@ -119,15 +117,8 @@
                             
 
                 <br>
-        <!--      <div class="form-check"></div>  SUBMIT BUTTON PRIMARY  lable
-                    <input type="submit" class="btn btn-outline-success mt-10"></button>
-                    <label for="submit"></label>       
-                  </div> -->
+
         <br>    
-
-
-
-
         </div> <!--END OF 2ND COLUMN-->
         
         
@@ -142,6 +133,7 @@
                 
                 // Draw the chart and set the chart values
                 function drawChart() {
+                var sliderIncome = document.getElementById("myRangeIncome");    
                 var sliderHouse = document.getElementById("myRangeHouse");
                 var sliderFood = document.getElementById("myRangeFood");
                 var sliderDebt = document.getElementById("myRangeDebt");
@@ -155,6 +147,7 @@
                 
                   var data = google.visualization.arrayToDataTable([
                   ['Expense', 'Monthly Amount'],
+                  ['Savings', parseInt(sliderIncome.value)], 
                   ['Housing', parseInt(sliderHouse.value)], 
                   ['Groceries', parseInt(sliderFood.value)],
                   ['Debt',  parseInt(sliderDebt.value) ],
