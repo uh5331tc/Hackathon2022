@@ -9,11 +9,10 @@ body {
 }
 
 h1 { 
-  border: 2px rgb(188, 189, 188) inset;  /*add border to section headers*/
+  /*border: 2px rgb(188, 189, 188) inset;  /*add border to section headers*/
   background-color: rgb(152, 14, 243);
   padding: 1px;
   border-radius: 50px;
-  border-image: 50% round; 
     color: rgb(29, 28, 28);  /*font color*/
     font-size: 30px; /*font size*/
     text-align: center; /*Center the text*/

@@ -17,7 +17,7 @@
     </div>
 
     <div class="mx-5">
-        <h1>Hello Student,   <!--GIANT HEADER-->
+        <h1>Hello, Giulia Drewes    <!--GIANT HEADER-->
         <p>Let's Build a Budget!</p> </h1>
     </div>
 
@@ -65,27 +65,60 @@
 
                 <label for="name">Slide to adjust Cost of Housing</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="0" max="3000" value="1500" class="sliderSpend" id="myRangeHouse" onChange="drawChart()">
+                            <input type="range" min="0" max="3000" value="1450.21" class="sliderSpend" id="myRangeHouse" onChange="drawChart()">
                         <span id="demoHouse"></span>
                         </div>
                 
                 <label for="name">Slide to adjust Cost of Groceries</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="1" max="1000" value="500" class="sliderSpend" id="myRangeFood" onChange="drawChart()">
+                            <input type="range" min="1" max="1000" value="131.73" class="sliderSpend" id="myRangeFood" onChange="drawChart()">
                             <span id="demoFood"></span>
                         </div>
                         
-                <label for="name">Slide to adjust Amount of Debt</label > <!--Income lable-->
+                <label for="name">Slide to adjust Home Furnishing</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="1" max="60000" value="30000" class="sliderSpend" id="myRangeDebt" onChange="drawChart()">
+                            <input type="range" min="1" max="500" value="96.23" class="sliderSpend" id="myRangeDebt" onChange="drawChart()">
                             <span id="demoDebt"></span>
                         </div>
 
+                        <label for="name">Slide to adjust Electronics</label > <!--Income lable-->
+                            <div class="slidecontainer">
+                                <input type="range" min="1" max="500" value="96" class="sliderSpend" id="myRangeElectronics" onChange="drawChart()">
+                                <span id="demoElectronics"></span>
+                            </div>
+
+                            <label for="name">Slide to adjust Fast Food</label > <!--Income lable-->
+                                <div class="slidecontainer">
+                                    <input type="range" min="1" max="500" value="131" class="sliderSpend" id="myRangeFastFood" onChange="drawChart()">
+                                    <span id="demoFastFood"></span>
+                                </div>
+
+                                <label for="name">Slide to adjust Clothing and Accessories </label > <!--Income lable-->
+                                    <div class="slidecontainer">
+                                        <input type="range" min="1" max="500" value="100" class="sliderSpend" id="myRangeCloth" onChange="drawChart()">
+                                        <span id="demoCloth"></span>
+                                    </div>
+
+                                    <label for="name">Slide to adjust Specialty Coffee</label > <!--Income lable-->
+                                        <div class="slidecontainer">
+                                            <input type="range" min="1" max="100" value="63" class="sliderSpend" id="myRangeCoffee" onChange="drawChart()">
+                                            <span id="demoCoffee"></span>
+                                        </div>
+
+                                        <label for="name">Slide to adjust Electricity</label > <!--Income lable-->
+                                            <div class="slidecontainer">
+                                                <input type="range" min="1" max="500" value="113" class="sliderSpend" id="myRangeElec" onChange="drawChart()">
+                                                <span id="demoElec"></span>
+                                            </div>
+
+                                            <label for="name">Slide to adjust Internet</label > <!--Income lable-->
+                                                <div class="slidecontainer">
+                                                    <input type="range" min="1" max="200" value="70" class="sliderSpend" id="myRangeInternet" onChange="drawChart()">
+                                                    <span id="demoInternet"></span>
+                                                </div>
+                            
+
                 <br>
-
-
-        
-           
         <!--      <div class="form-check"></div>  SUBMIT BUTTON PRIMARY  lable
                     <input type="submit" class="btn btn-outline-success mt-10"></button>
                     <label for="submit"></label>       
@@ -112,14 +145,26 @@
                 var sliderHouse = document.getElementById("myRangeHouse");
                 var sliderFood = document.getElementById("myRangeFood");
                 var sliderDebt = document.getElementById("myRangeDebt");
-              //var outputHouse = document.getElementById("demoHouse");
+                var sliderElectronics = document.getElementById("myRangeElectronics");
+                var sliderFastFood = document.getElementById("myRangeFastFood");
+                var sliderCloth = document.getElementById("myRangeCloth");
+                var sliderCoffee = document.getElementById("myRangeCoffee");
+                var sliderElec = document.getElementById("myRangeElec");
+                var sliderInternet = document.getElementById("myRangeInternet");
 
                 
                   var data = google.visualization.arrayToDataTable([
                   ['Expense', 'Monthly Amount'],
                   ['Housing', parseInt(sliderHouse.value)], 
                   ['Groceries', parseInt(sliderFood.value)],
-                  ['Debt',  parseInt(sliderDebt.value) ]
+                  ['Debt',  parseInt(sliderDebt.value) ],
+                  ['Electronics',  parseInt(sliderDebt.value) ],
+                  ['Fast Food',  parseInt(sliderFastFood.value) ],
+                  ['Debt Clothing and Accessories',  parseInt(sliderCloth.value) ],
+                  ['Coffee',  parseInt(sliderCoffee.value) ],
+                  ['Electric Bill',  parseInt(sliderElec.value) ],
+                  ['Internet Bill',  parseInt(sliderInternet.value) ],
+
                 ]);
                 
                   // Optional; add a title and set the width and height of the chart
@@ -132,9 +177,7 @@
                 </script>
 
             </div>
-        
-
-
+    
             <div >
                 <img src="borderBar.png" alt="Bottom Border"
                 style="width:100%; height:100%;">
@@ -178,8 +221,65 @@
             sliderDebt.oninput = function() {
             outputDebt.innerHTML = this.value;
             }
+
+            var sliderElectronics = document.getElementById("myRangeElectronics");
+            var outputElectronics = document.getElementById("demoElectronics");
+            outputElectroincs.innerHTML = sliderElectronics.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderElectronics.oninput = function() {
+            outputElectroincs.innerHTML = this.value;
+            }
+
+            var sliderFastFood = document.getElementById("myRangeFastFood");
+            var outputFastFood = document.getElementById("demoFastFood");
+            outputFastFood.innerHTML = sliderFastFood.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderFastFood.oninput = function() {
+            outputFastFood.innerHTML = this.value;
+            }
+
+            var sliderCloth = document.getElementById("myRangeCloth");
+            var outputCloth = document.getElementById("demoCloth");
+            outputCloth.innerHTML = sliderCloth.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderCloth.oninput = function() {
+            outputCloth.innerHTML = this.value;
+            }
+
+            var sliderCoffee = document.getElementById("myRangeCoffee");
+            var outputCoffee = document.getElementById("demoCoffee");
+            outputCoffee.innerHTML = sliderCoffee.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderCoffee.oninput = function() {
+            outputCoffee.innerHTML = this.value;
+            }
+
+            var sliderElec = document.getElementById("myRangeElec");
+            var outputElec = document.getElementById("demoElec");
+            outputElec.innerHTML = sliderElec.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderElec.oninput = function() {
+            outputElec.innerHTML = this.value;
+            }
+
+            var sliderInternet = document.getElementById("myRangeInternet");
+            var outputInternet = document.getElementById("demoInternet");
+            outputInternet.innerHTML = sliderInternet.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderInternet.oninput = function() {
+            outputInternet.innerHTML = this.value;
+            }
         </script>
         
-        
+        <h1>Summary</h1>
+        <div>  <img src="home.png" alt="home"
+            style="width:100%; height:100%;">
+             </div>
         </body>
         </html>
