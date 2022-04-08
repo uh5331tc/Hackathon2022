@@ -9,34 +9,44 @@
 
 <body class="mx-5"> <!--Auto adjust axis for multiple sized browsers-->
 
-    <div>
-        <h1>Hello Student, 
-            <input type="datetime-local">
-            
-
-        </h1>  <!--GIANT HEADER-->
+    <div class="current_cate"> <!--DISPLAY date and time-->
+        <div id="current_date"></p>
+            <script>
+            document.getElementById("current_date").innerHTML = Date();
+            </script>         
     </div>
+
+    <div class="mx-5">
+        <h1>Hello Student,   <!--GIANT HEADER-->
+        <p>Let's Build a Budget!</p> </h1>
+    </div>
+
 
     <div class="center">  <!--ROW-->
 
         <div class="col-md-9">
-            <div class="mx-5">
-            <p>
-           <h3> Lets build a budget!</h3> <br> <!--BR line break--> 
-            </p> 
-            </div>    
-        </div>
+     
 
 
         <div class="finacialInterval">
-            <label for="finacialInterval">Finacial Interval</label> <!--DROP DOWN MENU lable-->
-            <select id="finacialInterval" style="background-color: rgb(136, 160, 241); border: 3px solid #1f097e;">
-                <option name="Select-size" value="Select Size"></option>
-                <option name="1" value="ShortTerm">3 Months</option>
-                <option name="2" value="MediumTerm">6 Months</option>
-                <option name="3" value="LongTerm">9 Months</option>
-                </select required> <br> 
-        </div>
+            <label for="finacialInterval">Financial Interval</label> <!--DROP DOWN MENU lable-->
+            <select id="finacialInterval" style="background-color: rgb(194, 136, 241); border: 3px solid #c203fc;">
+                <option name="lengthTime" value="howLong"></option>
+                <option name="1" value="ShortTerm">1 Months</option>
+                <option name="2" value="MediumTerm">3 Months</option>
+                <option name="3" value="LongTerm">6 Months</option>
+                </select required> 
+<br>       
+<br>
+        <label for="finacialFocus">Financial Focus</label> <!--DROP DOWN MENU lable-->
+        <select id="finacialFocus" style="background-color: rgb(199, 136, 241); border: 3px solid #c203fc;">
+            <option name="goals" value="goalGoal"></option>
+            <option name="1" value="Small">Debt Free</option>
+            <option name="2" value="Medium">Regulate Spending</option>
+            <option name="3" value="Large">Invest</option>
+            </select required> <br> 
+<br>
+    </div>
 
         <div class="col-md-7"><!--MARGING "L" "R" OR MX-5 'AXIS MARGIN'-->
             <form> 
@@ -55,53 +65,80 @@
 
                 <label for="name">Slide to adjust Cost of Housing</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="0" max="3000" value="1500" class="sliderSpend" id="myRangeHouse">
+                            <input type="range" min="0" max="3000" value="1500" class="sliderSpend" id="myRangeHouse" onChange="drawChart()">
                         <span id="demoHouse"></span>
                         </div>
                 
                 <label for="name">Slide to adjust Cost of Groceries</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="1" max="1000" value="500" class="sliderSpend" id="myRangeFood">
+                            <input type="range" min="1" max="1000" value="500" class="sliderSpend" id="myRangeFood" onChange="drawChart()">
                             <span id="demoFood"></span>
                         </div>
                         
                 <label for="name">Slide to adjust Amount of Debt</label > <!--Income lable-->
                         <div class="slidecontainer">
-                            <input type="range" min="1" max="60000" value="30000" class="sliderSpend" id="myRangeDebt">
+                            <input type="range" min="1" max="60000" value="30000" class="sliderSpend" id="myRangeDebt" onChange="drawChart()">
                             <span id="demoDebt"></span>
                         </div>
 
                 <br>
 
-                <label for="T-shirt">Finacial Focus</label> <!--DROP DOWN MENU lable-->
-                <select id="T-shirt Size" style="background-color: rgb(136, 203, 241); border: 3px solid #1f097e;">
-                    <option name="Select-size" value="Select Size"></option>
-                    <option name="1" value="Small">Debt Free</option>
-                    <option name="2" value="Medium">Regulate Spending</option>
-                    <option name="3" value="Large">Invest</option>
-                    </select required> <br> 
-        <br>
+
+        
+           
+        <!--      <div class="form-check"></div>  SUBMIT BUTTON PRIMARY  lable
+                    <input type="submit" class="btn btn-outline-success mt-10"></button>
+                    <label for="submit"></label>       
+                  </div> -->
+        <br>    
+
+
+
+
+        </div> <!--END OF 2ND COLUMN-->
+        
+        
+    
+
+            <div id="piechart">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                // Load google charts
+                google.charts.load('current', {'packages':['corechart']});
+                google.charts.setOnLoadCallback(drawChart);
+                
+                // Draw the chart and set the chart values
+                function drawChart() {
+                var sliderHouse = document.getElementById("myRangeHouse");
+                var sliderFood = document.getElementById("myRangeFood");
+                var sliderDebt = document.getElementById("myRangeDebt");
+              //var outputHouse = document.getElementById("demoHouse");
+
+                
+                  var data = google.visualization.arrayToDataTable([
+                  ['Expense', 'Monthly Amount'],
+                  ['Housing', parseInt(sliderHouse.value)], 
+                  ['Groceries', parseInt(sliderFood.value)],
+                  ['Debt',  parseInt(sliderDebt.value) ]
+                ]);
+                
+                  // Optional; add a title and set the width and height of the chart
+                  var options = {'title':'Monthly Spending', 'width':550, 'height':500};
+                
+                  // Display the chart inside the <div> element with id="piechart"
+                  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+                  chart.draw(data, options);
+                }
+                </script>
+
             </div>
         
-            
-            <div class="form-check"></div>  <!--SUBMIT BUTTON PRIMARY  lable-->
-                <input type="submit" class="btn btn-outline-success mt-10"></button>
-                <label for="submit"></label>
-                
-            </div>
-        <br>    
+
 
             <div >
                 <img src="borderBar.png" alt="Bottom Border"
                 style="width:100%; height:100%;">
             </div>
-
-
-        </div> <!--END OF 2ND COLUMN-->
-        
-
-
-        
         </form>
         </div>  <!--   END OF ROW  -->
          

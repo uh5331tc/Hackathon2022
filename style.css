@@ -2,16 +2,21 @@
 
 body {
     margin:center;
-    background-image: linear-gradient(rgba(194, 114, 247, 0.863),rgba(216, 252, 176, 0.945) );  /*BACKGROUND COLOR GRADIANT*/
+    background-image: linear-gradient(rgba(234, 231, 236, 0.863),rgba(250, 247, 252, 0.945) );  /*BACKGROUND COLOR GRADIANT*/
     font-family: 'Lora', serif;
     font-size:larger;
     color: rgb(10, 10, 10)
 }
 
 h1 { 
+  border: 2px rgb(188, 189, 188) inset;  /*add border to section headers*/
+  background-color: rgb(152, 14, 243);
+  padding: 1px;
+  border-radius: 50px;
+  border-image: 50% round; 
     color: rgb(29, 28, 28);  /*font color*/
     font-size: 30px; /*font size*/
-    text-align: auto; /*Center the text*/
+    text-align: center; /*Center the text*/
     font-family: Arial, Helvetica, sans-serif; /*font style in prefered order*/
 }
 
@@ -35,19 +40,17 @@ h3 {
 }
 
 .section-header{
-    border: 2px rgb(184, 248, 187) inset;  /*add border to section headers*/
-    background-color: rgb(184, 253, 199);
-    padding: 25px;
+    border: 2px rgb(12, 12, 12) inset;  /*add border to section headers*/
+    background-color: rgb(33, 230, 50);
+    padding: 15px;
     border-radius: 100px;
-    border-image: url(border.png) 100% round;  /*ROUNDED CORNERS*/
 }
 
 .sectionheaderSpend{
-    border: 2px rgb(184, 248, 187) inset;  /*add border to section headers*/
-    background-color: rgb(253, 124, 124);
-    padding: 25px;
+    border: 2px rgb(0, 0, 0) inset;  /*add border to section headers*/
+    background-color: rgb(250, 61, 61);
+    padding: 15px;
     border-radius: 100px;
-    border-image: url(border.png) 100% round;  /*ROUNDED CORNERS*/
 }
 
 .sections{
@@ -156,3 +159,11 @@ transition: opacity .2s;
     background: url('icon.png');
     cursor: pointer;
   }
+
+
+
+  .piechart {
+    display: flex;
+    justify-content: center;
+    align-items: auto;
+}
