@@ -1,0 +1,158 @@
+
+
+body {
+    margin:center;
+    background-image: linear-gradient(rgba(194, 114, 247, 0.863),rgba(216, 252, 176, 0.945) );  /*BACKGROUND COLOR GRADIANT*/
+    font-family: 'Lora', serif;
+    font-size:larger;
+    color: rgb(10, 10, 10)
+}
+
+h1 { 
+    color: rgb(29, 28, 28);  /*font color*/
+    font-size: 30px; /*font size*/
+    text-align: auto; /*Center the text*/
+    font-family: Arial, Helvetica, sans-serif; /*font style in prefered order*/
+}
+
+h2 {  /*Header 2 formating*/
+    font-size: 20px;
+    color: rgb(10, 1, 1);
+    text-align: center;
+}
+
+h3 {
+    font-size: large;
+    color:rgb(10, 10, 10);
+    text-align: auto;
+
+}
+
+.finacialInterval {
+    font-size: large;
+    color:rgb(10, 10, 10);
+    text-align: auto;
+}
+
+.section-header{
+    border: 2px rgb(184, 248, 187) inset;  /*add border to section headers*/
+    background-color: rgb(184, 253, 199);
+    padding: 25px;
+    border-radius: 100px;
+    border-image: url(border.png) 100% round;  /*ROUNDED CORNERS*/
+}
+
+.sectionheaderSpend{
+    border: 2px rgb(184, 248, 187) inset;  /*add border to section headers*/
+    background-color: rgb(253, 124, 124);
+    padding: 25px;
+    border-radius: 100px;
+    border-image: url(border.png) 100% round;  /*ROUNDED CORNERS*/
+}
+
+.sections{
+    border: 2px rgb(247, 173, 234) inset;  /*add border to section headers*/
+    border-radius: 25px;
+    background-color: rgba(255, 255, 240, 0.534);
+    padding: 5px;
+    text-align: center;
+}
+
+.form-text{
+    font-size: 30px;
+    border-image: fill;
+    border:2px rgb(255, 0, 212) inset;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 240, 0.534);
+}
+
+.center{
+    width: 80%;  /*WIDTH OF ELEMENTS ON THE PAGE */
+
+}
+
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+  }
+  
+  /* The slider itself */
+  .slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #6bfa6b; /* Green background */
+    outline: none; /* Remove outline */
+    opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+  }
+
+  /* Mouse-over effects */
+  .slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+  }
+  
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('dollar.png');
+    cursor: pointer;
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 23px;
+    height: 25px;
+    border: 0;
+    background: url('dollar.png');
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+  /* The SPEND slider itself */
+.sliderSpend {
+-webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+width: 100%; /* Full-width */
+height: 25px; /* Specified height */
+background: #fd2e2ed0; /* Green background */
+outline: none; /* Remove outline */
+opacity: 0.5; /* Set transparency (for mouse-over effects on hover) */
+-webkit-transition: .2s; /* 0.2 seconds transition on hover */
+transition: opacity .2s;
+}
+
+  /* Mouse-over effects */
+.sliderSpend:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+
+.sliderSpend::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('icon.png');
+    cursor: pointer;
+  }
+  
+  .sliderSpend::-moz-range-thumb {
+    width: 23px;
+    height: 25px;
+    border: 0;
+    background: url('icon.png');
+    cursor: pointer;
+  }

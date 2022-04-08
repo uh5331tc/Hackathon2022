@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lan="en"> <!--English-->
+<head>
+    <meta charset="UTF-8">  <!--8 common laungages-->
+    <title>API Banking </title>  <!--bootstrap link below-->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet"> <!--imported fonts-->
+    <link rel="stylesheet" href="style.css">  <!-- My style sheet I made-->
+</head>
+
+<body class="mx-5"> <!--Auto adjust axis for multiple sized browsers-->
+
+    <div>
+        <h1>Hello Student, 
+            <input type="datetime-local">
+            
+
+        </h1>  <!--GIANT HEADER-->
+    </div>
+
+    <div class="center">  <!--ROW-->
+
+        <div class="col-md-9">
+            <div class="mx-5">
+            <p>
+           <h3> Lets build a budget!</h3> <br> <!--BR line break--> 
+            </p> 
+            </div>    
+        </div>
+
+
+        <div class="finacialInterval">
+            <label for="finacialInterval">Finacial Interval</label> <!--DROP DOWN MENU lable-->
+            <select id="finacialInterval" style="background-color: rgb(136, 160, 241); border: 3px solid #1f097e;">
+                <option name="Select-size" value="Select Size"></option>
+                <option name="1" value="ShortTerm">3 Months</option>
+                <option name="2" value="MediumTerm">6 Months</option>
+                <option name="3" value="LongTerm">9 Months</option>
+                </select required> <br> 
+        </div>
+
+        <div class="col-md-7"><!--MARGING "L" "R" OR MX-5 'AXIS MARGIN'-->
+            <form> 
+            <div>
+                <h2 class="section-header">Monthly Income</h2> <br> <!--BR line break--> 
+
+                <label for="name">Slide to adjust monthly Income</label > <!--Income lable-->
+                    <div class="slidecontainer">
+                        <input type="range" min="100" max="10000" value="5000" class="slider" id="myRangeIncome">
+                    <span id="demoIncome"></span>
+                    </div>
+        <br>    
+        
+
+            <h2 class="sectionheaderSpend">Monthly Spending</h2> <br> <!--BR line break--> 
+
+                <label for="name">Slide to adjust Cost of Housing</label > <!--Income lable-->
+                        <div class="slidecontainer">
+                            <input type="range" min="0" max="3000" value="1500" class="sliderSpend" id="myRangeHouse">
+                        <span id="demoHouse"></span>
+                        </div>
+                
+                <label for="name">Slide to adjust Cost of Groceries</label > <!--Income lable-->
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="1000" value="500" class="sliderSpend" id="myRangeFood">
+                            <span id="demoFood"></span>
+                        </div>
+                        
+                <label for="name">Slide to adjust Amount of Debt</label > <!--Income lable-->
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="60000" value="30000" class="sliderSpend" id="myRangeDebt">
+                            <span id="demoDebt"></span>
+                        </div>
+
+                <br>
+
+                <label for="T-shirt">Finacial Focus</label> <!--DROP DOWN MENU lable-->
+                <select id="T-shirt Size" style="background-color: rgb(136, 203, 241); border: 3px solid #1f097e;">
+                    <option name="Select-size" value="Select Size"></option>
+                    <option name="1" value="Small">Debt Free</option>
+                    <option name="2" value="Medium">Regulate Spending</option>
+                    <option name="3" value="Large">Invest</option>
+                    </select required> <br> 
+        <br>
+            </div>
+        
+            
+            <div class="form-check"></div>  <!--SUBMIT BUTTON PRIMARY  lable-->
+                <input type="submit" class="btn btn-outline-success mt-10"></button>
+                <label for="submit"></label>
+                
+            </div>
+        <br>    
+
+            <div >
+                <img src="borderBar.png" alt="Bottom Border"
+                style="width:100%; height:100%;">
+            </div>
+
+
+        </div> <!--END OF 2ND COLUMN-->
+        
+
+
+        
+        </form>
+        </div>  <!--   END OF ROW  -->
+         
+        <script> //one for each javascript for sliders
+            var sliderIncome = document.getElementById("myRangeIncome");
+            var outputIncome = document.getElementById("demoIncome");
+            outputIncome.innerHTML = sliderIncome.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderIncome.oninput = function() {
+            outputIncome.innerHTML = this.value;
+            }
+
+            var sliderHouse = document.getElementById("myRangeHouse");
+            var outputHouse = document.getElementById("demoHouse");
+            outputHouse.innerHTML = sliderHouse.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderHouse.oninput = function() {
+            outputHouse.innerHTML = this.value;
+            }
+
+            var sliderFood = document.getElementById("myRangeFood");
+            var outputFood = document.getElementById("demoFood");
+            outputFood.innerHTML = sliderFood.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderFood.oninput = function() {
+            outputFood.innerHTML = this.value;
+            }
+
+            var sliderDebt = document.getElementById("myRangeDebt");
+            var outputDebt = document.getElementById("demoDebt");
+            outputDebt.innerHTML = sliderDebt.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            sliderDebt.oninput = function() {
+            outputDebt.innerHTML = this.value;
+            }
+        </script>
+        
+        
+        </body>
+        </html>
